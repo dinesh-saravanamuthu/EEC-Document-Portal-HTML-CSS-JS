@@ -1,0 +1,29 @@
+EEC VANILLA CONVERSION — TEST REPORT
+
+Automated checks performed:
+- JavaScript parser check: PASS (`node --check app.js`)
+- HTML parser smoke check: PASS (document structure and referenced assets)
+- Static event coverage: PASS (all authored data-action values have delegated click handlers)
+- Framework dependency scan: PASS (no React/Vite/Axios imports or runtime dependencies in the delivered app)
+- Archive integrity: PASS (ZIP CRC test)
+
+Manual browser testing:
+- Not performed in this environment. The report does not claim every interaction was validated in a live browser.
+
+Workflow paths implemented in vanilla JS:
+- Student email preview login
+- Student registration and local profile creation
+- Student request creation and persistence
+- Student request search, details, messaging, vault, print/save PDF
+- Staff preview login
+- Staff request filtering/search, status updates, final document content validation, message sending
+- CSV export
+- Local verification view
+- Theme persistence and sign out
+
+Known differences from the full-stack original:
+- Email OTP delivery/verification is unavailable without a backend and SMTP.
+- Authentication/authorization are simulated and not secure.
+- Data is browser-local only, not PostgreSQL/shared across users or devices.
+- Public verification is local to the current browser, not server-backed.
+- Print/save uses the browser print dialog, not the original signed/QR/SHA-256 PDF generator.
